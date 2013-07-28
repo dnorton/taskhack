@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/taskman/!svn/ver/298/taskman/vendor/plugins/openid_consumer/lib/open_id_consumer
+END
+setting.rb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/taskman/!svn/ver/297/taskman/vendor/plugins/openid_consumer/lib/open_id_consumer/setting.rb
+END
+active_record_open_id_store.rb
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/taskman/!svn/ver/297/taskman/vendor/plugins/openid_consumer/lib/open_id_consumer/active_record_open_id_store.rb
+END
+nonce.rb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/taskman/!svn/ver/297/taskman/vendor/plugins/openid_consumer/lib/open_id_consumer/nonce.rb
+END
+controller_methods.rb
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/taskman/!svn/ver/297/taskman/vendor/plugins/openid_consumer/lib/open_id_consumer/controller_methods.rb
+END
+association.rb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/taskman/!svn/ver/298/taskman/vendor/plugins/openid_consumer/lib/open_id_consumer/association.rb
+END

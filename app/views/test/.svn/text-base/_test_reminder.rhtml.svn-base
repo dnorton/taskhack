@@ -1,0 +1,9 @@
+<%= test_reminder.test_date.to_formatted_s(:short_stamp) %><br/>
+checked on <%= Time.now.to_formatted_s(:short_stamp)%>
+<% if test_reminder.test_date < Time.now %>
+<p>TRUE</p>
+<script type="text/javascript" language="javascript">
+    var time = '<%= test_reminder.test_date.to_formatted_s(:mondayyear)%>'.escapeHTML();
+    alert('pop up alert ' + time);
+</script>
+<% end  %>

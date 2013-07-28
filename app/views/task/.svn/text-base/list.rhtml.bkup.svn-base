@@ -1,0 +1,55 @@
+<div id="header"><%= link_to "signout", :controller => 'account', :action => 'logout' %>
+<p/>
+<p/>
+<h1 style="display:inline"><%= display_name -%>'s Tasks</h1> - <%= link_to_remote("new task", 
+										  :update => 'new_task',
+										  :url => {:controller => 'task', :action => 'new'}) %>
+
+<div id="new_task"></div>
+
+<ul id="task_list">
+<% @active_tasks.each do |@task| %>
+	<li class="task_item"><%= @task.name %> | total: <%= human_time(@task.total_time) %> | <% if @task.started? %>  
+	<b>Running... </b>
+<%= link_to "stop", 
+	:controller => 'task',
+	:action => 'stop',
+	:id => @task %> 
+<% else %>
+<%= link_to "start", 
+	:controller => 'task',
+	:action => 'start',
+	:id => @task %> 
+<% end %>
+	 <%= check_box("task[]", "completed", 
+			:onclick => "document.location.href='#{url_for(:controller => 'task', 
+   								       :action => 'toggle_check', 
+								       :id => @task)}'") %>
+<div class="del_link" style="display:inline"><%= link_to "x", {:controller => 'task', 
+			   :action => 'remove', 
+			   :id => @task },
+		           :confirm => 'are you sure you want to delete this task?' %></div>
+
+</li>
+<% end %>	
+</ul>
+
+<% unless @complete_tasks.nil? or @complete_tasks.empty? %>
+<h4>Completed Tasks</h4>
+<ul id="completed_tasks">
+<% @complete_tasks.each do |@task| %>
+	<li class="task_item"><%= @task.name %> | total: <%= human_time(@task.total_time) %> <%= check_box("task[]", "completed", 
+			:onclick => "document.location.href='#{url_for(:controller => 'task', 
+   								       :action => 'toggle_check', 
+								       :id => @task)}'") %>
+<div class="del_link" style="display:inline"><%= link_to "x", {:controller => 'task', 
+			   :action => 'remove', 
+			   :id => @task },
+		           :confirm => 'are you sure you want to delete this task?' %></div>
+
+
+</li>
+<% end %>	
+</ul>
+<% end %><%# end unless complete_tasks.nil %>
+

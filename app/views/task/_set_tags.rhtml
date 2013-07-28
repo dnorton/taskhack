@@ -1,0 +1,7 @@
+<% form_remote_tag(:update => "task_#{@task.id}",
+		:url => {:controller => 'task', :action => 'edit_tags', :id => @task},
+		:html => {:id => 'tag_list', :method => 'post'}) do -%>
+tags: <%= text_field_tag("tags", @task.tag_list) %> <%= submit_tag "save" %> - <%= link_to_remote "cancel", :update => "task_#{@task.id}", :url => { :controller => 'task',
+													   :action => 'details',
+													   :id => @task } %>
+<% end %>

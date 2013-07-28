@@ -1,0 +1,8 @@
+<h2><%= @task.name %></h2> - <%= link_to "back", :controller => 'project', :action => 'show', :id => @task.project.id %>
+<br/>
+<b>Comments:</b>
+<ul class="comment_list">
+<% @comments.each do |comment|%>
+<li><%= comment.comment %></li>
+<% end %>
+</ul>

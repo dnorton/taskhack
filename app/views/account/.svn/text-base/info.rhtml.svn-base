@@ -1,0 +1,13 @@
+<% content_for :actions do %>
+<ul id="actions">
+	<li><a href="#" onclick="showNewTask();return false;">New Task</a></li>
+	<li><%= link_to "Edit Info", :controller => 'account', :action => 'edit' %></li>
+</ul>
+<% end %>
+
+login: <%= @user.login %><br/>
+name: <%= @user.display_name %><br/>
+email: <%= @user.email_address %><br/>
+time_zone: <%= @user.time_zone %><br/>
+openid_url: <%= @user.openid_url %> (not editable yet)<br/>
+email_reminders: <span id="email_reminder"><% if @user.email_flag? %> true <% else %> false <% end %></span>

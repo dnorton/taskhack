@@ -1,0 +1,111 @@
+<span id="task_check_<%= @task.id %>"> <%= check_box("task", "completed?", 
+        :onclick => "document.location.href='#{url_for(:controller => 'task', 
+                                                               :action => 'toggle_check', 
+                                                       :id => @task)}'") %></span>
+<% if @task.started? %>
+  <span id="running_task_name_<%= @task.id -%>" class="running">
+      <% else %>
+        <span id="task_name_<%= @task.id -%>">
+      <% end %>
+      <%= @task.name %> 
+      </span> <!-- END task_name span -->
+<div id="task_<%= @task.id %>_details" class="more_info">
+     total: <span id="<%= @task.id %>_time"><%= print_hours_minutes(@task.total_time + @task.running_time) %></span>
+  <div id="projects">project: <%= link_to @task.project.title, :controller => 'project', :action => 'show', :id => @task.project  %> -
+    <%= link_to_remote "edit", :url => {:controller => 'project',
+                                                                           :action => 'p_list',
+                                                                               :id => @task},
+                                                          :update => 'projects' %>
+  </div>
+  <div id="comments_<%= @task.id %>"><%= render(:partial => 'task/comment_link', :object => @task) %></div>
+    <!-- DN fix me -->
+    <div id="tags">
+      <% if @task.tag_list.blank? %>
+        <i>No tags</i> - <%= link_to_remote "edit", :url => {
+          :controller => 'task', :action => 'set_tags', :id => @task },
+          :update => 'tags' %>
+
+      <% else %>
+        tags: <% @task.tags.each {|tag| %>
+          <%= link_to "#{tag}", :controller => 'search', :action=> 'tags', :tag => "#{tag}" %>   
+        <% } %> - <%= link_to_remote "edit", :url => {
+                   :controller => 'task', :action => 'set_tags', :id => @task },
+                   :update => 'tags' %>
+               <% end %>
+    </div>		
+    <% unless @task.due_at.nil? %>
+      due date: <%= session[:user].to_local_time(@task.due_at).to_formatted_s(:short_stamp) %>- <%= link_to_remote "remove", :update => "task_#{@task.id}", 
+        :url => {
+                :controller => 'task',
+                :action => 'remove_due_date',
+                :id => @task
+      },
+        :complete => 'check_reminders()' %><br/>
+<% end%>
+<% unless @task.reminder_at.nil? %>
+      reminder date: <%= session[:user].to_local_time(@task.reminder_at).to_formatted_s(:short_stamp) %> - <%= link_to_remote "remove", :update => "task_#{@task.id}", 
+        :url => {
+                :controller => 'task',
+                :action => 'remove_reminder',
+                :id => @task
+      },
+        :complete => 'check_reminders()' %><br/>
+<% end%>
+
+<% unless @task.completed? %>
+
+  <% if @task.started? -%>
+    <%= periodically_call_remote(:update => "#{@task.id}_time",
+                              :url => { :controller => 'task', :action => 'total_time', :id => @task },
+                              :frequency => 60  ) %>
+                                                           
+  <% end %>
+  <% if @task.due_at.nil? %>
+        <div id="task_<%= @task.id %>_due_date"><i>No Due Date</i> - <%= link_to_remote "add due date",
+          :update => "task_#{@task.id}_due_date",
+          :url => { :controller => 'task',
+                            :action => 'add_due_date',
+                            :id => @task.id
+                        }%></div>
+  <% end %>
+  <% if ! @task.due_at.nil? && @task.reminder_at.nil? && ! @reminder.nil? %>
+    <% form_remote_tag(:url => {:controller => 'task', :action => 'add_reminder_date', :id => @task},
+      :update => "task_#{@task.id}",
+      :complete => 'check_reminders()' ) do -%>
+        <label for="task[time_before]">Reminder: </label><input type="text" name="reminder[time]" size="3"> <%= select(:reminder, :units, @reminder.rtime) %> (before due date)
+        <input id="reminder-time-submit-button" name="commit" value="Add" type="submit">
+      <% end %>
+    <% end %>
+    <div id="commands">
+      <% if @task.started? -%>  
+        <%= link_to_remote "stop",
+                   :update => "task_#{@task.id}",
+                   :url => { 
+                   :controller => 'task',
+                   :action => 'stop',
+                   :id => @task,
+                   :details => true
+                 } -%> 
+      <% else %>
+        <%= link_to_remote "start",
+                   :update => "task_#{@task.id}",
+                   :url => { 
+                   :controller => 'task',
+                   :action => 'start',
+                   :id => @task,
+                   :details => true
+                 } -%>
+      <% end -%>
+    <% end %> <%# end unless @task.completed? block %>
+    |  <%= link_to_remote "edit", 
+      :update => "task_#{@task.id}",
+      :url => {
+          :controller => 'task', 
+          :action => 'edit', 
+          :id => @task 
+    } -%> | <%= link_to  "delete", {:controller => 'task', 
+                                      :action => 'remove', 
+                                      :id => @task },
+                                      :confirm => "are you sure you want to delete the task \n\"#{@task.name}\"?" %>
+  </div><!-- end div "commands" -->
+</div><!-- end task details -->

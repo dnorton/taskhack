@@ -1,0 +1,6 @@
+<% @task = task %>
+<tr id="task_<%= @task.id -%>" class="task">
+	<%= render(:partial => 'task/summary', :object => task) %>
+</tr> <!-- end tr -->
+
+

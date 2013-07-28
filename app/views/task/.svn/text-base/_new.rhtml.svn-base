@@ -1,0 +1,22 @@
+<% form_remote_tag(:url => {:controller => 'task', :action => 'add'},
+		    :update => 'active_tasks_table',
+		    :loading => 'task_loading()',
+		    :complete => 'task_added()',
+		    :position => :top) do -%>
+<label for="task_name">Name:</label> <%= text_field 'task', 'name' %><br/>
+<label for="project_name">Project: 
+<span id="project_select_field">
+	<% if @project.nil? %>
+		Inbox
+	<% else %>
+		<%= @project.title %>
+		<%= hidden_field(:project, :id)%>
+	<% end %> - <%= link_to_remote "change",
+			:update => "project_select_field",
+			:url => {
+			    :controller => 'task', 
+			    :action => 'change_project'
+			} %></span>
+<br/>
+<%= submit_tag "Add", :id => 'form-submit-button' %> <a href="#" onClick="newTaskPanel.hide();return false">close</a>
+<% end %>

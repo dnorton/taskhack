@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/taskman/!svn/ver/303/taskman/vendor/plugins/active_record_openid_store
+END
+XXX_add_open_id_store_to_db.rb
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/taskman/!svn/ver/303/taskman/vendor/plugins/active_record_openid_store/XXX_add_open_id_store_to_db.rb
+END
+init.rb
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/taskman/!svn/ver/303/taskman/vendor/plugins/active_record_openid_store/init.rb
+END
+XXX_upgrade_open_id_store.rb
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/taskman/!svn/ver/303/taskman/vendor/plugins/active_record_openid_store/XXX_upgrade_open_id_store.rb
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/taskman/!svn/ver/303/taskman/vendor/plugins/active_record_openid_store/README
+END

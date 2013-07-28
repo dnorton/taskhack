@@ -1,0 +1,26 @@
+<!-- Source file --> 
+<script type="text/javascript" src="/javascripts/yui/build/dragdrop/dragdrop-min.js"></script> 
+<!-- Source file --> 
+<script type="text/javascript" src="/javascripts/yui/build/container/container-min.js"></script> 
+<!-- CSS --> 
+<link rel="stylesheet" type="text/css" href="/javascripts/yui/build/container/assets/container.css" />
+	<p>Testing the YUI Panel.  More information can be found at the <a href="http://developer.yahoo.com/yui/container/panel/">Yahoo UI Library: Panel</a>
+		<!-- First Panel, simple positioning -->
+		<div id="panel_one"> 
+			<div class="hd">New Task</div>  
+			<div class="bd"><%= render(:partial => 'task/new')%></div>  
+
+		</div>
+<br/><a href="#" onclick="myPanel.show();return false;">Test One</a>
+<script type="text/javascript">
+	var myPanel = new YAHOO.widget.Panel("panel_one",
+	{ 
+		    close:true,  
+		    visible:false,  
+		    draggable:true,
+			width:"400px",
+			underlay:"shadow"
+		}
+);
+	myPanel.render();
+</script>

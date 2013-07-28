@@ -1,0 +1,19 @@
+<br/><br/>
+<table id="completed_tasks_table" class="task_table" cellspacing="0">
+<caption>Completed Tasks (<%= human_time(@total) %>)</h4> - <%= link_to_remote "hide", :update => 'completed_tasks',
+					:url => {
+						:controller => 'project',
+						:action => 'hide_completed_tasks',
+						:id => @project } %></caption>
+<thead>
+	<tr>
+		<th scope="col" id="col_head_check_done">Done</th>
+		<th scope="col" id="col_head_title_done">Title</th>
+	</tr>
+</thead>						
+<tbody>
+<%= render(:partial => 'task/task', :collection => @completed_tasks,
+           :locals => {:stop => false }) -%>
+</tbody>
+</table>
+<br/><br/>

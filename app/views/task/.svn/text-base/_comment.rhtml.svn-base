@@ -1,0 +1,15 @@
+<% @task = comment.task %>
+<div class="comment_heading">posted <%= session[:user].to_local_time(comment.created_at).to_s(:short_stamp) -%> - 
+<%= link_to_remote "edit",
+			:url => {:controller => 'task',
+			:action => 'edit_comment',
+			:id => comment.id },
+			:update => "comment_#{comment.id}",
+			:html => {:method => 'GET'}%> -
+<%= link_to_remote "delete", 
+	        :url => {:controller => 'task', 
+	        :action => 'delete_comment',
+	        :id => comment.id },
+	        :update => 'sidebar',
+	        :complete => "comment_added('#{@task.id}')" %></div>
+<%= textilize(comment.comment) -%> 

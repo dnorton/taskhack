@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/taskman/!svn/ver/305/taskman/db/migrate
+END
+005_add_comment_counter.rb
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/taskman/!svn/ver/142/taskman/db/migrate/005_add_comment_counter.rb
+END
+010_add_user_time_zone.rb
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/taskman/!svn/ver/253/taskman/db/migrate/010_add_user_time_zone.rb
+END
+013_acts_as_taggable_migration.rb
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/taskman/!svn/ver/305/taskman/db/migrate/013_acts_as_taggable_migration.rb
+END
+011_add_open_id_tables.rb
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/taskman/!svn/ver/296/taskman/db/migrate/011_add_open_id_tables.rb
+END
+003_drop_completed.rb
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/taskman/!svn/ver/19/taskman/db/migrate/003_drop_completed.rb
+END
+008_add_queued_message_table.rb
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/taskman/!svn/ver/200/taskman/db/migrate/008_add_queued_message_table.rb
+END
+012_upgrade_open_id_store.rb
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/taskman/!svn/ver/305/taskman/db/migrate/012_upgrade_open_id_store.rb
+END
+002_add_due_date.rb
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/taskman/!svn/ver/17/taskman/db/migrate/002_add_due_date.rb
+END
+007_add_sessions.rb
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/taskman/!svn/ver/159/taskman/db/migrate/007_add_sessions.rb
+END
+004_add_tagging_tables.rb
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/taskman/!svn/ver/144/taskman/db/migrate/004_add_tagging_tables.rb
+END
+009_add_email_reminder_flag.rb
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/taskman/!svn/ver/200/taskman/db/migrate/009_add_email_reminder_flag.rb
+END
+001_initial_schema.rb
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/taskman/!svn/ver/17/taskman/db/migrate/001_initial_schema.rb
+END
+006_update_taggings_add_user_id.rb
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/taskman/!svn/ver/141/taskman/db/migrate/006_update_taggings_add_user_id.rb
+END

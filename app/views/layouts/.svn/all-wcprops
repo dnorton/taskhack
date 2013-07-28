@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/taskman/!svn/ver/304/taskman/app/views/layouts
+END
+taskman.rhtml
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/taskman/!svn/ver/304/taskman/app/views/layouts/taskman.rhtml
+END
+tasklayout.rhtml
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/taskman/!svn/ver/304/taskman/app/views/layouts/tasklayout.rhtml
+END
+scaffold.rhtml
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/taskman/!svn/ver/2/taskman/app/views/layouts/scaffold.rhtml
+END

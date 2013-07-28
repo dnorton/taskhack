@@ -1,0 +1,4 @@
+<%= @project.title %> - <%= link_to "remove", 
+                                { :controller => 'project', :action => 'remove', :id => @project },
+                                :confirm => 'are you sure you want to delete this project?' %> - 
+                                projected due date: <%= @project.expected_complete_date %>

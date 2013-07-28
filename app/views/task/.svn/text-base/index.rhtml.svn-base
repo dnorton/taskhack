@@ -1,0 +1,2 @@
+got here <%= @task.total_hits %><br/>
+title: <%= @task[0].name %>

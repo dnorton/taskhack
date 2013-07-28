@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/taskman/!svn/ver/304/taskman/app/views/reminders
+END
+_show.rhtml
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/taskman/!svn/ver/261/taskman/app/views/reminders/_show.rhtml
+END
+_check_past_due.rhtml
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/taskman/!svn/ver/181/taskman/app/views/reminders/_check_past_due.rhtml
+END
+send_email.rhtml
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/taskman/!svn/ver/304/taskman/app/views/reminders/send_email.rhtml
+END
+show.rhtml
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/taskman/!svn/ver/264/taskman/app/views/reminders/show.rhtml
+END
+_task.rhtml
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/taskman/!svn/ver/304/taskman/app/views/reminders/_task.rhtml
+END

@@ -1,0 +1,79 @@
+<% @task = summary %>
+<td>
+	 <%= check_box("task", "completed?", 
+			:onclick => "document.location.href='#{url_for(:controller => 'task', 
+   								       :action => 'toggle_check', 
+								       :id => summary)}'") %>
+</td>
+<td id="td_title_<%= summary.id %>" class="td_task_title"> <!-- TODO: define outer wrapping span -->
+<% if summary.started? %>
+<span id="task_name_<%= summary.id -%>" class="running task_name">
+<% else %>
+<span id="task_name_<%= summary.id -%>" class="task_name">
+<% end %>
+
+<%= summary.name %> 
+
+</span> <!-- END task_name span -->
+<% if summary.completed? %>
+<span class="completed_task_details"><br/>
+
+<% else %>
+<span class="task_details" style="display:none">
+<% end %>
+<span class="task_element"><%= link_to_remote image_tag("/images/blue_down.gif"), 
+         :update => "task_#{summary.id}",
+         :url => {
+         :controller => 'task', 
+			   :action => 'details', 
+			   :id => summary },
+		:class => 'get task details' %>
+</span>
+
+<span id="task_time_<%= summary.id %>" class="task_element"><%= print_hours_minutes(summary.total_time + summary.running_time) %></span>
+<% unless summary.completed? %>
+<span class="task_element">
+<% if summary.started? -%>  
+<%= link_to_remote "stop",
+	:update => "task_#{summary.id}",
+	:url => { 
+	:controller => 'task',
+	:action => 'stop',
+	:id => summary
+	},
+	:complete => "task_updated('#{summary.id}')" -%> 
+<% else %>
+<%= link_to_remote "start",
+	:update => "task_#{summary.id}",
+	:url => { 
+	:controller => 'task',
+	:action => 'start',
+	:id => summary
+	},  
+	:complete => "task_updated('#{summary.id}')" -%>
+<% end -%>
+</span>
+<% end %> <%# end unless summary.completed? block %>
+
+<span id="comments_<%= summary.id %>"><%= render(:partial => 'task/comment_link', :object => summary) %></span>
+
+</span><!-- end task_details -->
+</td> <!-- end outer wrapping span -->
+<% if @task.started? -%>
+<%= periodically_call_remote(:update => "task_time_#{summary.id}",
+                             :url => { :controller => 'task', :action => 'total_time', :id => summary },
+                             :frequency => 60  ) %>
+<script type="text/javascript" language="javascript">
+    YEvent.addListener('task_time_<%= summary.id %>', 'mouseover', highlightTime, 'task_time_<%= summary.id %>');
+    YEvent.addListener('task_time_<%= summary.id %>', 'mouseout', unhighlightTime, 'task_time_<%= summary.id %>');
+</script>
+
+                                                                
+<% end %>
+<script type="text/javascript" language="javascript">
+	YEvent.addListener('task_name_<%= summary.id %>', 'mouseover', highlightNameOn);
+	YEvent.addListener('task_name_<%= summary.id %>', 'mouseout', highlightNameOff);
+	YEvent.addListener('task_name_<%= summary.id %>', 'click', setName);
+</script>
+
+

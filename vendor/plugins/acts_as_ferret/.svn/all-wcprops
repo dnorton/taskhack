@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/taskman/!svn/ver/303/taskman/vendor/plugins/acts_as_ferret
+END
+LICENSE
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/taskman/!svn/ver/303/taskman/vendor/plugins/acts_as_ferret/LICENSE
+END
+rakefile
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/taskman/!svn/ver/303/taskman/vendor/plugins/acts_as_ferret/rakefile
+END
+init.rb
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/taskman/!svn/ver/303/taskman/vendor/plugins/acts_as_ferret/init.rb
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/taskman/!svn/ver/303/taskman/vendor/plugins/acts_as_ferret/README
+END

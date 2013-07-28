@@ -1,0 +1,18 @@
+#!/usr/bin/env ruby
+ENV['PATH'] = '/usr/local/bin:/usr/bin:' + ENV['PATH']
+ENV['RUBYOPT'] = 'rubygems'
+require 'pathname'
+
+script_dir = Pathname.new(File.dirname(__FILE__)).realpath
+runner = script_dir.to_s + '/runner'
+
+command = <<'HERE'
+"messages = QueuedMessage.find(:all, :conditions => [\"scheduled_at < ? and sent_at is NULL\", Time.now])
+    messages.each do |message|
+      # send email and mark it as sent
+      Notifier.deliver_reminder(Task.find(message.task_id))
+      message.sent_at = Time.now
+      message.save!      
+    end"
+HERE
+%x{#{runner} #{command}}

@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/taskman/!svn/ver/303/taskman/vendor/plugins/open_id_authentication/lib/open_id_authentication
+END
+setting.rb
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/taskman/!svn/ver/303/taskman/vendor/plugins/open_id_authentication/lib/open_id_authentication/setting.rb
+END
+db_store.rb
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/taskman/!svn/ver/303/taskman/vendor/plugins/open_id_authentication/lib/open_id_authentication/db_store.rb
+END
+nonce.rb
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/taskman/!svn/ver/303/taskman/vendor/plugins/open_id_authentication/lib/open_id_authentication/nonce.rb
+END
+association.rb
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/taskman/!svn/ver/303/taskman/vendor/plugins/open_id_authentication/lib/open_id_authentication/association.rb
+END

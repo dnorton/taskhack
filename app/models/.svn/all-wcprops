@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/taskman/!svn/ver/312/taskman/app/models
+END
+user.rb
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/taskman/!svn/ver/312/taskman/app/models/user.rb
+END
+notifier.rb
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/taskman/!svn/ver/270/taskman/app/models/notifier.rb
+END
+test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/taskman/!svn/ver/304/taskman/app/models/test.rb
+END
+comment.rb
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/taskman/!svn/ver/139/taskman/app/models/comment.rb
+END
+task.rb
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/taskman/!svn/ver/304/taskman/app/models/task.rb
+END
+reminder.rb
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/taskman/!svn/ver/76/taskman/app/models/reminder.rb
+END
+project.rb
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/taskman/!svn/ver/304/taskman/app/models/project.rb
+END
+queued_message.rb
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/taskman/!svn/ver/282/taskman/app/models/queued_message.rb
+END

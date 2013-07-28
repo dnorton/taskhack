@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/taskman/!svn/ver/303/taskman/vendor/plugins/acts_as_ferret/lib
+END
+more_like_this.rb
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/taskman/!svn/ver/303/taskman/vendor/plugins/acts_as_ferret/lib/more_like_this.rb
+END
+multi_index.rb
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/taskman/!svn/ver/303/taskman/vendor/plugins/acts_as_ferret/lib/multi_index.rb
+END
+acts_as_ferret.rb
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/taskman/!svn/ver/303/taskman/vendor/plugins/acts_as_ferret/lib/acts_as_ferret.rb
+END
+instance_methods.rb
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/taskman/!svn/ver/303/taskman/vendor/plugins/acts_as_ferret/lib/instance_methods.rb
+END
+class_methods.rb
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/taskman/!svn/ver/303/taskman/vendor/plugins/acts_as_ferret/lib/class_methods.rb
+END

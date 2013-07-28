@@ -1,0 +1,29 @@
+<% @task = task %>
+<li class="task_item" id="task_<%= @task.id -%>"><%= @task.name %> | 
+<% if @task.started? && ! @task.completed? %>  
+<%= link_to "stop", 
+	:controller => 'task',
+	:action => 'stop',
+	:id => @task %> 
+<% elsif !@task.completed? %>
+<%= link_to "start", 
+	:controller => 'task',
+	:action => 'start',
+	:id => @task %> 
+<% end %>
+	 <%= check_box("task[]", "completed", 
+			:onclick => "document.location.href='#{url_for(:controller => 'task', 
+   								       :action => 'toggle_check', 
+								       :id => @task)}'") %>
+<div class="del_link" style="display:inline"><%= link_to "x", {:controller => 'task', 
+			   :action => 'remove', 
+			   :id => @task },
+		           :confirm => 'are you sure you want to delete this task?' %></div>
+
+<div class="task_details"><span class="task_el1">total: <%= human_time(@task.total_time) %></span>
+<% if @task.started? %>
+	<span id="running_<%= @task.id -%>" class="running">Running...</span>
+<% end %>
+</div>
+</li>
+

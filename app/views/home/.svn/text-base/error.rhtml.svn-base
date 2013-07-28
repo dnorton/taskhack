@@ -1,0 +1,2 @@
+<div id="error_message"><%= flash[:error_message] -%></div><br/>
+<a href="/">go home now</a>

@@ -1,0 +1,14 @@
+<td>
+  <%= check_box("task", "completed?", 
+                   :onclick => "document.location.href='#{url_for(:controller => 'task', 
+                                                                  :action => 'toggle_check', 
+                                                                  :id => @task)}'") %>
+</td>
+<td>
+  <% form_remote_tag(:update => "task_#{@task.id}",
+                     :url => {:controller => 'task', :action => 'edit_name', :id => @task}) do -%>
+    <%= text_field(:task, :name) %> <%= submit_tag "save" %> - <%= link_to_remote "cancel", :update => "task_#{@task.id}", :url => { :controller => 'task',
+                                                                                                                  :action => 'summary',
+                                                                                                                  :id => @task } %>
+  <% end %>
+</td>

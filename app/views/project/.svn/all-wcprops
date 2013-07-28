@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/taskman/!svn/ver/304/taskman/app/views/project
+END
+list.rhtml
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/taskman/!svn/ver/252/taskman/app/views/project/list.rhtml
+END
+order.rhtml
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/taskman/!svn/ver/252/taskman/app/views/project/order.rhtml
+END
+remove.rhtml
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/taskman/!svn/ver/2/taskman/app/views/project/remove.rhtml
+END
+_completed_tasks.rhtml
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/taskman/!svn/ver/161/taskman/app/views/project/_completed_tasks.rhtml
+END
+show.rhtml
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/taskman/!svn/ver/304/taskman/app/views/project/show.rhtml
+END
+_project.rhtml
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/taskman/!svn/ver/2/taskman/app/views/project/_project.rhtml
+END
+edit.rhtml
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/taskman/!svn/ver/304/taskman/app/views/project/edit.rhtml
+END
+_active_time.rhtml
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/taskman/!svn/ver/23/taskman/app/views/project/_active_time.rhtml
+END
+_listing.rhtml
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/taskman/!svn/ver/195/taskman/app/views/project/_listing.rhtml
+END
+_edit_tasks.rhtml
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/taskman/!svn/ver/304/taskman/app/views/project/_edit_tasks.rhtml
+END
+_p_list.rhtml
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/taskman/!svn/ver/304/taskman/app/views/project/_p_list.rhtml
+END
+new.rhtml
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/taskman/!svn/ver/304/taskman/app/views/project/new.rhtml
+END

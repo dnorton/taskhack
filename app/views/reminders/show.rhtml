@@ -1,0 +1,8 @@
+<h1>Reminders</h1>
+<% @tasks.each do |@task| %>
+    <br/><%= link_to @task.name,
+             :controller => 'task',
+             :action => 'show',
+             :id => @task
+              -%>| <%= session[:user].to_local_time(@task.due_at).to_time.to_formatted_s(:short_stamp) -%> | <%= @task.title -%>
+<% end %>

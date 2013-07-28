@@ -1,0 +1,7 @@
+<% cache(:controller => 'tag', :action => 'list', :id => session[:user].id) do %>
+<ul id="tags_list" class="drop_down">
+	<% @tags.each do |tag|%>
+		<li><a href="/tags/<%= tag %>"><%= tag %></a></li>
+	<% end%>
+</ul>
+<% end %>

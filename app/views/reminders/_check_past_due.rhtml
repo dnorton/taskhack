@@ -1,0 +1,7 @@
+<% if @has_reminders %>
+	<div id="inner_status">
+    <%= link_to_remote "You have Reminders!", :update => 'sidebar',
+                       :url => {:controller => 'reminders',
+                                :action => 'show'} %>	
+	</div>
+<% end %>

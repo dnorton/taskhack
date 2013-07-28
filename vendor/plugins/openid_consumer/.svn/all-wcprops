@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/taskman/!svn/ver/298/taskman/vendor/plugins/openid_consumer
+END
+LICENSE
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/taskman/!svn/ver/297/taskman/vendor/plugins/openid_consumer/LICENSE
+END
+Rakefile
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/taskman/!svn/ver/297/taskman/vendor/plugins/openid_consumer/Rakefile
+END
+init.rb
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/taskman/!svn/ver/297/taskman/vendor/plugins/openid_consumer/init.rb
+END
+install.rb
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/taskman/!svn/ver/297/taskman/vendor/plugins/openid_consumer/install.rb
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/taskman/!svn/ver/297/taskman/vendor/plugins/openid_consumer/README
+END

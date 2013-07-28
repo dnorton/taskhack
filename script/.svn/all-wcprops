@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/taskman/!svn/ver/255/taskman/script
+END
+console
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/taskman/!svn/ver/2/taskman/script/console
+END
+check_email
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/taskman/!svn/ver/255/taskman/script/check_email
+END
+breakpointer
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/taskman/!svn/ver/2/taskman/script/breakpointer
+END
+server
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/taskman/!svn/ver/2/taskman/script/server
+END
+destroy
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/taskman/!svn/ver/2/taskman/script/destroy
+END
+runner
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/taskman/!svn/ver/2/taskman/script/runner
+END
+about
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/taskman/!svn/ver/2/taskman/script/about
+END
+generate
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/taskman/!svn/ver/2/taskman/script/generate
+END
+plugin
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/taskman/!svn/ver/2/taskman/script/plugin
+END

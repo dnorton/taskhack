@@ -1,0 +1,16 @@
+<div id="comments">
+<h4 style="display:inline"><%= @task.name %></h4> - <a href="#" onClick="$('sidebar').innerHTML='';return false;">close</a>
+<br/>
+<b>Notes:</b>
+<ul class="comment_list">
+<% @comments.each do |comment|%>
+<li id="comment_<%= comment.id %>">
+	<%= render(:partial => 'task/comment', :object => comment) %>
+</li>
+<% end %>
+</ul>
+<div id="new_comment">
+	<%= link_to_remote "new note", :update => 'new_comment',
+			:url => {:controller => 'task', :action => 'add_comment', :id => @task} %>
+</div>
+</div><!-- end comments div -->

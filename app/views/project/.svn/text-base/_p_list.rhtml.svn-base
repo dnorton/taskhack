@@ -1,0 +1,13 @@
+<% form_remote_tag(:update => "task_#{@task.id}",
+		:url => {:controller => 'task', :action => 'edit_project', :id => @task},
+		:html => {:method => 'post'}) do -%>
+<%= select :project, :id, @projects.map {|p| [p.title, p.id]} %>
+<%= submit_tag("Save")%> - <%= link_to_remote( "cancel",
+	:update => "task_#{@task.id}",
+	:url => { 
+	:controller => 'task',
+	:action => 'details',
+	:id => @task
+	},
+	:complete => "task_updated('#{@task.id}')") -%>
+<% end %>

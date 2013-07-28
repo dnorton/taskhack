@@ -1,0 +1,7 @@
+<% @plisting = listing %>
+<li><%= link_to "#{@plisting.title}", :controller => 'project', :action => 'show', :id => @plisting %>
+ - <%= @plisting.count_active_tasks %> Active
+ <% if @plisting.has_running_tasks? %>
+	<span class="running message">Has Running Task...</span>
+<% end %>
+</li>

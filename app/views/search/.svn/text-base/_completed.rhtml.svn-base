@@ -1,0 +1,30 @@
+<p>completed task for &quot;<%= params[:q] %>&quot; (<%= @tasks.total_hits %>)
+	<table id="completed_results_table" class="task_table" cellspacing="0">
+		<thead>
+			<tr>
+				<th scope="col" id="col_result_title">Title</th>
+				<th scope="col" id="col_result_project">Project</th>
+				<th scope="col" id="col_result_note">Notes</th>
+				
+			</tr>
+		</thead>		
+		
+		<% @tasks.each do |task|%>
+		<tr>
+		    <td><%= link_to task.name,
+		             :controller => 'task',
+		             :action => 'show',
+		             :id => task
+		              -%></td>
+			<td><%= link_to task.project.title , :controller => 'project',
+		                                            :action => 'show',
+		                                            :id => task.project.id %></td>
+		     <td><%= link_to_remote "notes(#{task.comments.size})", :update => 'sidebar',
+		:url => {   :controller => 'task',      
+					:action => 'comments',
+					:id => task }%></td>
+
+		</tr>
+		<% end%>
+	</table>
+<p/><p/>

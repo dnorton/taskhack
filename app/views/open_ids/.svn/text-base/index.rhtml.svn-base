@@ -1,0 +1,16 @@
+
+
+<h1><%= @title %></h1>
+
+<div><strong><%= flash[:message] %></strong></div>
+<div><strong><%= flash[:error] %></strong></div>
+
+<p>Please login with your OpenID Identity URL</p>
+
+<div id="verify-form">
+  <%= start_form_tag :action => 'begin' %>
+    Identity URL:
+    <input type="text" id="openid_url" name="openid_url" style="width: 200px" />
+    <input type="submit" value="Verify" />
+  </form>
+</div>

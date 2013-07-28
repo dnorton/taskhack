@@ -1,0 +1,37 @@
+<div id="messsage" style="margin-left:30px;padding:3px;border:1px solid;"><i><strong>I recommend using <a href="http://getfirefox.com">FireFox</a> for this site.</strong></i>
+</div>
+<% form_tag "/account/login" do -%>
+
+<div title="Account login" id="loginform" class="form">
+    <h3>Please login</h3>
+    
+    <% if flash['notice'] %>
+      <div id="message"><%= flash['notice'] %></div>
+    <% end %>
+
+    <label for="user_login">Login:</label><br/>
+    <input type="text" name="user_login" id="user_login" size="30" value=""/><br/>
+
+    <label for="user_password">Password:</label><br/>
+    <input type="password" name="user_password" id="user_password" size="30"/>
+
+    <br/>
+    <input type="submit" name="login" value="Login &#187;" class="primary" />
+
+</div>
+
+<% end %>
+
+<h3>Or Use Your OpenID account</h3>
+
+<div id="verify-form">
+  <% form_tag '/open_ids/begin' do -%>
+    Identity URL:<br/>
+    <input type="text" id="openid_url" name="openid_url" style="width: 200px" />
+    <input type="submit" value="Verify" />
+  <% end %>
+</div>
+<p/>
+<div id="notice">
+No Account?  <%= link_to "Signup", :action => 'signup' %>
+</div>

@@ -1,0 +1,1 @@
+<b><%= sprintf("%0.2f", @running_time) %> s</b>

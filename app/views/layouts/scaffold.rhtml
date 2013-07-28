@@ -1,0 +1,17 @@
+<html>
+<head>
+  <title>Time Manager</title>
+  <%= stylesheet_link_tag 'taskman' %>
+</head>
+<body>
+
+<p style="color: green"><%= flash[:notice] %></p>
+
+<div id="main">
+<div id="container">
+<%= @content_for_layout %>
+</div> <!-- end div containter -->
+</div> <!-- end div main -->
+
+</body>
+</html>

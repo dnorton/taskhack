@@ -1,0 +1,7 @@
+<% form_tag :controller => 'account', :action => 'edit' do -%>
+<label for="user_login">Login:</label><br/><%= text_field :user, :login %><br/>
+<label for="user_time_zone">Select Your Time Zone: <br/>
+<%= time_zone_select :user, :time_zone %></label><br/><br/>
+<label for="user_email_flag">Email Reminders?</label><%= check_box(:user, :email_flag) %></br>
+<%= submit_tag %>
+<% end %>

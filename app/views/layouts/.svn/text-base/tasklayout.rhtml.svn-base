@@ -1,0 +1,12 @@
+<% unless yield :actions %>
+<% content_for :actions do %>
+<ul id="actions">
+<li><a href="#" onclick="showNewTask();return false;">New Task</a></li>
+<li><%= link_to 'Export', 
+				:controller => 'project', 
+				:action => 'export', 
+				:id => @project %></li>
+</ul>
+<% end %>
+<% end %>
+<%= render :file => 'layouts/taskman' %>

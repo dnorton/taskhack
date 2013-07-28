@@ -1,0 +1,32 @@
+<table id="active_tasks_table" class="task_table" cellspacing="0">                                    
+<caption>Active Tasks (<span id="active_time"><%= human_time(@active_total) %></span>)</caption> 
+<thead>
+	<tr>
+		<th scope="col" id="col_head_check_box">Done</th>
+		<th scope="col" id="col_head_title">Title</th>
+	</tr>
+</thead>
+<tbody>
+    <% @active_tasks.each do |task | %>
+        <%= render(:partial => 'task/task', :object => task, 
+            :locals => {:stop => false }) -%>
+    <% end %>
+</tbody>
+</table>
+<br/><br/>
+<div id="completed_tasks">
+<table id="completed_tasks_table" class="task_table" cellspacing="0">
+<caption>Completed Tasks (<%= human_time(@completed_total) %>)</caption>
+<thead>
+	<tr>
+		<th scope="col" id="col_head_check_done">Done</th>
+		<th scope="col" id="col_head_title_done">Title</th>
+	</tr>
+</thead>						
+<tbody>
+<%= render(:partial => 'task/task', :collection => @completed_tasks,
+           :locals => {:stop => false }) -%>
+</tbody>
+</table>
+</div><!-- end completed_tasks -->
+<br/><br/>

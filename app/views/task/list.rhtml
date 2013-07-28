@@ -1,0 +1,48 @@
+<% if @project.tasks.size <	 1 %>
+<div id="no_task_message"><i>You don't have any tasks.  Click <a href="#" onclick="showNewTask();return false;">New Task</a> to create one</i></div>
+<% @task_table_style = "style=\"display:none;\"" %>
+<% else %>
+<% @task_table_style = ""%>
+<% end %>
+<table id="active_tasks_table" class="task_table" <%= @task_table_style %> cellspacing="0">    
+<caption>Active Tasks (<span id="active_time"><%= human_time(@active_total) %></span>)</caption>
+<thead>
+	<tr>
+		<th scope="col" id="col_head_check_box">Done</th>
+		<th scope="col" id="col_head_title">Title</th>
+	</tr>
+</thead>
+<tbody>
+	<%= render(:partial => 'task/task', :collection => @active_tasks,
+	           :locals => {:stop => false }) -%>
+</tbody>
+</table>
+<div id="completed_tasks">
+<% unless session[:open_id].include?(@project.id) %>
+<p/><%= link_to_remote "show completed tasks", :update => 'completed_tasks',
+					:url => {
+						:controller => 'project',
+						:action => 'completed_tasks',
+						:id => @project } %>	
+<% end %>
+<% if session[:open_id].include?(@project.id) %>
+<br/><br/>
+<table id="completed_tasks_table" class="task_table" cellspacing="0">
+<caption>Completed Tasks (<%= human_time(@complete_total) %>)</h4> - <%= link_to_remote "hide", :update => 'completed_tasks',
+					:url => {
+						:controller => 'project',
+						:action => 'hide_completed_tasks',
+						:id => @project } %></caption>
+<thead>
+	<tr>
+		<th scope="col" id="col_head_check_done">Done</th>
+		<th scope="col" id="col_head_title_done">Title</th>
+	</tr>
+</thead>						
+<tbody>
+<%= render(:partial => 'task/task', :collection => @complete_tasks,
+           :locals => {:stop => false }) -%>
+</tbody>
+</table>
+<% end %>
+</div><!-- end completed_tasks -->

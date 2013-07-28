@@ -1,0 +1,11 @@
+<h2>Hi there!</h2><br/>
+Thanks for checking out <a href="http://taskhack.com">taskhack.com</a>.  You're probably wondering what this is all about.  Here's a quick run down.
+<ul>
+	<li><b>Track your time</b> - create tasks and use the start/stop feature to track how long you've been working on it.  I use this primarily to keep my multitasking brain in check.<br/>
+		<h4>New Task (using Yahoo's YUI)</h4>
+		<img src="/images/new_task.png" alt="New Task Screen Grab">
+		<h4>Running Task</h4>
+		<img src="/images/running_task.png" alt="Running Task Screen Grab">		
+	</li>
+	<li>(more updates coming soon... I promise)</li>
+</ul>

@@ -1,0 +1,23 @@
+<% form_tag :action=> "signup" do -%>
+
+<div title="Account signup" id="signupform" class="form">
+  <h3>Signup</h3>
+  <%= error_messages_for 'user' %><br/>
+
+  <label for="user_login">login name:</label><br/>
+  <%= text_field "user", "login", :size => 30 %><br/>
+  <label for="user_email_address">email address:</label><br/>
+  <%= text_field "user", "email_address", :size => 30 %><br/>
+  <label for="user_password">Choose password:</label><br/>
+  <%= password_field "user", "password", :size => 30 %><br/>
+  <label for="user_password_confirmation">Confirm password:</label><br/>
+  <%= password_field "user", "password_confirmation", :size => 30 %><br/><br/>
+  <label for="user_time_zone">Select Your Time Zone: <br/>
+  <%= time_zone_select :user, :time_zone %></label><br/><br/>
+  <label for="user_email_flag">Email Me Reminders?</label> 
+  <%= check_box :user, :email_flag %><br/>
+
+<input type="submit" value="Signup &#187;" class="primary" />
+
+<% end %>
+

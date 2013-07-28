@@ -1,0 +1,10 @@
+Task: <%= @task.name %>
+Project: <%= @task.project.title %>
+Due: <%= @user.to_local_time(@task.due_at).to_formatted_s(:short_stamp) %>	
+<% if @task.comments.size > 0 %>
+----------------
+Notes:
+<% @task.comments.each do |note| %>
+<%= note.comment %>
+<% end %>
+<% end %>

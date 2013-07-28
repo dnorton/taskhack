@@ -1,0 +1,66 @@
+<% @task = edit %>
+<td></td>
+<td>
+  Edit Task <b>or <%= link_to "delete", {:controller => 'task', :action => 'remove', :id => @task},
+    :confirm => "are you sure you want to delete the task \n\"#{@task.name}\"?" %></b><br/>
+          
+<% form_remote_tag(:update => "task_#{@task.id}",
+               :url => {:controller => 'task',
+                         :action => 'save',
+                         :id => @task},
+                                    :html => {:method => 'post'},
+                                    :complete => "task_updated('#{@task.id}')") do -%>
+    <table class="edit_table">
+      <tr>
+        <td>
+          name: 
+        </td>
+        <td><%= text_field("task", "name")%>
+        </td>
+      </tr>
+      <tr>
+        <td>total:</td>
+        <td><%= text_field("task", "hours", :size => 3) %>:<%= text_field("task", "minutes", :size => 3) %> (h:m)</td>
+      </tr>
+      <tr>
+        <td>project:</td>
+        <td><%= select :project, :id, @projects.map {|p| [p.title, p.id]} %></td>
+      </tr>
+      <tr>
+        <td>tags:</td>
+        <td><%= text_field_tag("tags", @task.tag_list) %></td>
+      </tr>
+      <tr>
+        <td>due date:</td>
+        <td><% if ! @task.due_at.nil? %>
+            <%= text_field_tag('task[due_at]', session[:user].to_local_time(@task.due_at).to_formatted_s(:form), {:id => "f_date_a", :class => "date_text"}) %>
+          <% else %>
+            <%= text_field_tag('task[due_at]', '', {:id => "f_date_a", :class => "date_text"}) %>
+          <% end %>
+          <img src="/images/calendar.png" id="calendar_img"/>
+        </td>
+      </tr>
+    
+    </table>
+    <br/>
+    <%= submit_tag("Save")%> - <%= link_to_remote( "cancel",
+               :update => "task_#{@task.id}",
+               :url => { 
+                 :controller => 'task',
+                 :action => 'details',
+                 :id => @task
+               },
+               :complete => "task_updated('#{@task.id}')") -%>  
+  
+  <% end %>
+</td>
+<script type="text/javascript">
+  Calendar.setup({
+    inputField     :    "f_date_a",      // id of the input field
+    ifFormat       :    "%m/%d/%Y %I:%M %p",       // format of the input field
+    button         :    "calendar_img",   // trigger for the calendar button
+    showsTime      :    true,            // will display a time selector
+    singleClick    :    false,           // double-click mode
+    step           :    1                // show all years in drop-down boxes (instead of every other year as default)
+  });
+  </script>

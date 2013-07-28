@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/taskman/!svn/ver/11/taskman/test/unit
+END
+user_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/taskman/!svn/ver/2/taskman/test/unit/user_test.rb
+END
+comment_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/taskman/!svn/ver/11/taskman/test/unit/comment_test.rb
+END
+task_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/taskman/!svn/ver/2/taskman/test/unit/task_test.rb
+END
+project_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/taskman/!svn/ver/2/taskman/test/unit/project_test.rb
+END

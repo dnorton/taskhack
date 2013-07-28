@@ -1,0 +1,11 @@
+
+<% 
+@task = add_comment
+@comment = @task.comments.new 
+%>
+<% form_remote_tag(:url => {:controller => 'task', :action => 'new_comment', :id => @task},
+                       :update => 'sidebar',
+                       :complete => "comment_added('#{@task.id}')" ) do -%>
+  <label for="comment_comment">New Note:</label> <%= text_area 'comment', 'comment', :rows => "3" %><br/><%= submit_tag "Add", :id => 'comment-submit-button' %><br/>
+  <a href="http://hobix.com/textile/quick.html" target="_blank">Some Textile formatting is OK</a><br/>
+<% end %>

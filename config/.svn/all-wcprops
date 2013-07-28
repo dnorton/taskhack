@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/taskman/!svn/ver/313/taskman/config
+END
+lighttpd.conf
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/taskman/!svn/ver/313/taskman/config/lighttpd.conf
+END
+routes.rb
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/taskman/!svn/ver/309/taskman/config/routes.rb
+END
+database.yml
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/taskman/!svn/ver/313/taskman/config/database.yml
+END
+boot.rb
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/taskman/!svn/ver/313/taskman/config/boot.rb
+END
+environment.rb
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/taskman/!svn/ver/307/taskman/config/environment.rb
+END

@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/taskman/!svn/ver/313/taskman/public
+END
+dispatch.cgi
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/taskman/!svn/ver/2/taskman/public/dispatch.cgi
+END
+dispatch.rb
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/taskman/!svn/ver/2/taskman/public/dispatch.rb
+END
+dispatch.fcgi
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/taskman/!svn/ver/265/taskman/public/dispatch.fcgi
+END
+robots.txt
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/taskman/!svn/ver/2/taskman/public/robots.txt
+END
+500.html
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/taskman/!svn/ver/2/taskman/public/500.html
+END
+404.html
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/taskman/!svn/ver/2/taskman/public/404.html
+END
+.htaccess
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/taskman/!svn/ver/48/taskman/public/.htaccess
+END
+favicon.ico
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/taskman/!svn/ver/2/taskman/public/favicon.ico
+END

@@ -1,0 +1,25 @@
+<% content_for :actions do %>
+<ul id="actions">
+<li><a href="#" onclick="showNewTask();return false;">New Task</a></li>
+<li><%= link_to "Edit", { :controller => 'task', 
+				  :action => 'edit', 
+				  :id => @task } %></li>
+</ul>
+<% end %>
+
+<div id="task_container_<%= @task.id %>" class="container">
+	<table class="task_table" cellspacing="0">                                    
+	<thead>
+		<tr>
+			<th scope="col" id="col_head_check_box">Done</th>
+			<th scope="col" id="col_head_title">Title</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr id="task_<%= @task.id -%>" class="task">
+		<%= render(:partial => 'task/details', :object => @task) %>
+		</tr>
+	</tbody>
+	</table>
+	
+</div>

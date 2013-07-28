@@ -1,0 +1,3 @@
+<% cache(:controller => 'project', :action => 'list', :id => session[:user].id) do %>
+<%= select :project, :id, @projects.map {|p| [p.title, p.id]} %>
+<% end %>

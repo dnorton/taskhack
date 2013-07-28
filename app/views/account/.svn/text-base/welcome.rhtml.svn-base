@@ -1,0 +1,11 @@
+
+<div class="memo">
+    <h3>Welcome <%= display_name %></h3>
+
+    <p>You are now logged into the system...</p>
+    <p> Go to your <%= link_to "tasks", :controller => 'task', :action => 'list' %>
+    </p>
+      
+    <%= link_to "&#171; logout", :action=>"logout"%>  
+      
+</div>

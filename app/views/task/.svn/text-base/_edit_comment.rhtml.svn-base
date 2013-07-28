@@ -1,0 +1,5 @@
+<% form_remote_tag(:update => 'sidebar',
+                   :url => {:controller => 'task', :action => 'save_comment', :id => @comment},
+                   :html => {:method => 'GET'}) do -%>
+  Edit This Note:<br/> <%= text_area(:comment, :comment, "cols" => 9) %> <%= submit_tag "save" %>
+<% end %>

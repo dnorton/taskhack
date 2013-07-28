@@ -1,0 +1,5 @@
+<% unless @action_status.nil?%>
+<div id="inner_action_status">
+	<%= @action_status[:message] %> <a href="/task/show/<%= @action_status[:task].id %>"><%= @action_status[:task].name %></a>
+</div>
+<% end %>

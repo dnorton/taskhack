@@ -1,0 +1,17 @@
+<b><%= link_to "&lt;&lt; Return to Tasks", :controller => 'project', :action => 'show', :id => @project %></b><br/><br/>
+<h4>Sorting <%= @project.title %></h4>
+<!--Sort is <a href="javascript: sort_on()" id="sort_on">OFF</a><a href="javascript: sort_off()" id="sort_off" style="display:none">ON</a> -->
+<ul id="task_list">
+    <% @project.active_tasks.each do |task | %>
+        <%= render(:partial => 'task/sortable', :object => task) -%>
+    <% end %>
+</ul>
+<script type="text/javascript">
+//<![CDATA[
+Sortable.create("task_list", {onUpdate:function(){new Ajax.Request('/project/sort/<%= @project.id %>', {
+	asynchronous:true, evalScripts:true, onComplete:function(request){
+		new Effect.Highlight("task_list",{});
+	}, parameters:Sortable.serialize("task_list")
+	})}})
+//]]>
+</script>

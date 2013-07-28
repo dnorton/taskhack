@@ -1,0 +1,14 @@
+<% content_for :actions do %>
+<ul id="actions">
+	<li><a href="#" onclick="showNewTask();return false;">New Task</a></li>
+	<li><%= link_to "New Project", :controller => 'project', :action => 'new' %></li>
+</ul>
+<% end %>
+<% if session[:user].projects.size <= 1%>
+<strong><%= link_to "Create Your First Project", :controller => 'project', :action => 'new' %></strong> or 
+<%= link_to "Jump to your Inbox", :controller => 'task', :action => 'index'%>
+<% else %>
+<ul id="project_list">
+<%= render(:partial => 'listing', :collection => @project_list) -%>
+</ul>
+<% end %>

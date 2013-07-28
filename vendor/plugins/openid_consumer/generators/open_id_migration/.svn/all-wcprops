@@ -1,0 +1,11 @@
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/taskman/!svn/ver/297/taskman/vendor/plugins/openid_consumer/generators/open_id_migration
+END
+open_id_migration_generator.rb
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/taskman/!svn/ver/297/taskman/vendor/plugins/openid_consumer/generators/open_id_migration/open_id_migration_generator.rb
+END

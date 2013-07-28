@@ -1,0 +1,5 @@
+<h1>New Task</h1>
+<% form_tag :action => 'new' do -%>
+<label for="task_name">Name:</label> <%= text_field 'task', 'name' %><br/>
+<label for="project_name">Project:</label><%= select :project, :id, @projects.map {|p| [p.title, p.id]} %><br/><%= submit_tag "Add", :id => 'form-submit-button' %> <a href="#" onClick="Element.hide('new_task');return false">close</a>
+<% end %>

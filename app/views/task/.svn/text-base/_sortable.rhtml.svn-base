@@ -1,0 +1,4 @@
+<% @task = sortable %>
+<li id="task_<%= @task.id -%>">
+<%= @task.name %>
+</li>

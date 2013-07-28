@@ -1,0 +1,64 @@
+<% content_for :actions do %>
+<ul id="actions">
+<li><a href="#" onclick="showNewTask();return false;">New Task</a></li>
+<li><%= link_to 'Export', 
+				:controller => 'project', 
+				:action => 'export', 
+				:id => @project %></li>
+<li><%= link_to "Edit", { :controller => 'project', 
+				  :action => 'edit', 
+				  :id => @project } %></li>
+</ul>
+<% end %>
+<% unless @project.expected_complete_date.nil?%>
+due date: <%= @project.expected_complete_date.to_formatted_s(:mondayyear) %><% end %>
+
+<table id="active_tasks_table" class="task_table" cellspacing="0">                                    
+<caption>Active Tasks (<span id="active_time"><%= human_time(@active_total) %></span>)</caption> 
+<!--Sort is <a href="javascript: sort_on()" id="sort_on">OFF</a><a href="javascript: sort_off()" id="sort_off" style="display:none">ON</a> -->
+<thead>
+	<tr>
+		<th scope="col" id="col_head_check_box">Done</th>
+		<th scope="col" id="col_head_title">Title</th>
+	</tr>
+</thead>
+<tbody>
+    <% @active_tasks.each do |task | %>
+        <%= render(:partial => 'task/task', :object => task, 
+            :locals => {:stop => false }) -%>
+    <% end %>
+	
+</tbody>
+</table>
+<div id="completed_tasks">
+<% unless session[:open_id].include?(@project.id) %>
+<p/><%= link_to_remote "show completed tasks", :update => 'completed_tasks',
+					:url => {
+						:controller => 'project',
+						:action => 'completed_tasks',
+						:id => @project } %>	
+<% end %>
+<% if session[:open_id].include?(@project.id) %>
+<br/><br/>
+<table id="completed_tasks_table" class="task_table" cellspacing="0">
+<caption>Completed Tasks (<%= human_time(@completed_total) %>)</h4> - <%= link_to_remote "hide", :update => 'completed_tasks',
+					:url => {
+						:controller => 'project',
+						:action => 'hide_completed_tasks',
+						:id => @project } %></caption>
+<thead>
+	<tr>
+		<th scope="col" id="col_head_check_done">Done</th>
+		<th scope="col" id="col_head_title_done">Title</th>
+	</tr>
+</thead>						
+<tbody>
+<%= render(:partial => 'task/task', :collection => @completed_tasks,
+           :locals => {:stop => false }) -%>
+</tbody>
+</table>
+<% end %>
+</div><!-- end completed_tasks -->
+<script type="text/javascript" language="javascript">
+    YAHOO.util.Event.addListener('active_time', 'click', updateProjectActiveTime, '<%= @project.id %>');
+</script>
